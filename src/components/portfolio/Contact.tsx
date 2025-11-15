@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, Download, ExternalLink } from "lucide-react";
+import { Mail, Linkedin, Github, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Contact = () => {
@@ -72,21 +72,24 @@ export const Contact = () => {
           {/* Right Column */}
           <div className="space-y-6">
             <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-xl p-8">
-              <h3 className="text-2xl font-heading font-bold mb-4">Download Portfolio</h3>
+              <h3 className="text-2xl font-heading font-bold mb-4">Quick Links</h3>
               <p className="text-primary-foreground/80 mb-6">
-                Get a PDF copy of this complete portfolio for offline viewing or sharing with recruiters.
+                Navigate to key sections of the portfolio
               </p>
-              <Button
-                size="lg"
-                className="w-full bg-accent hover:bg-accent/90 text-white font-medium"
-                onClick={() => window.print()}
-              >
-                <Download className="mr-2" size={20} />
-                Download Portfolio (PDF)
-              </Button>
-              <p className="text-xs text-primary-foreground/60 mt-4">
-                Use your browser's print function (Ctrl/Cmd + P) to save as PDF
-              </p>
+              <div className="space-y-3">
+                {["projects", "skills", "resume"].map((section) => (
+                  <button
+                    key={section}
+                    onClick={() => {
+                      const element = document.getElementById(section);
+                      element?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="w-full px-4 py-3 bg-primary-foreground/10 hover:bg-primary-foreground/20 border border-primary-foreground/20 rounded-lg text-left font-medium capitalize transition-all"
+                  >
+                    {section}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="bg-coral/20 backdrop-blur-sm border border-coral/30 rounded-xl p-6">

@@ -1,6 +1,10 @@
 import { Server, Database, Code } from "lucide-react";
 
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+
 export const Skills = () => {
+  const { ref, isVisible } = useIntersectionObserver();
+  
   const skills = [
     {
       name: "Backend Development",
@@ -29,7 +33,13 @@ export const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="section-padding bg-muted/30">
+    <section 
+      ref={ref}
+      id="skills" 
+      className={`section-padding bg-muted/30 transition-all duration-1000 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-4">

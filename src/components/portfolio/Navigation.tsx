@@ -76,14 +76,6 @@ export const Navigation = () => {
                   {item.label}
                 </button>
               ))}
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => window.print()}
-                className="ml-2"
-              >
-                Download PDF
-              </Button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -116,16 +108,6 @@ export const Navigation = () => {
                 {item.label}
               </button>
             ))}
-            <Button
-              variant="default"
-              onClick={() => {
-                window.print();
-                setIsOpen(false);
-              }}
-              className="mt-4"
-            >
-              Download PDF
-            </Button>
           </div>
         </div>
       )}

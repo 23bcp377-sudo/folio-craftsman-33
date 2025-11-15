@@ -1,19 +1,24 @@
-import { GraduationCap, Code, Database, Award, Users, Heart, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { GraduationCap, Code, Database, Award, Users, Heart } from "lucide-react";
+
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 export const Resume = () => {
+  const { ref, isVisible } = useIntersectionObserver();
+  
   return (
-    <section id="resume" className="section-padding bg-muted/30">
+    <section 
+      ref={ref}
+      id="resume" 
+      className={`section-padding bg-muted/30 transition-all duration-1000 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-4">
             Resume / CV
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mb-6"></div>
-          <Button size="lg" onClick={() => window.print()}>
-            <Download className="mr-2 h-5 w-5" />
-            Download CV (PDF)
-          </Button>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">

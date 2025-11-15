@@ -1,4 +1,4 @@
-import { Mail, Download } from "lucide-react";
+import { Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
@@ -48,15 +48,6 @@ export const Hero = () => {
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Contact Me
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 font-medium"
-                onClick={() => window.print()}
-              >
-                <Download className="mr-2 h-5 w-5" />
-                Download CV
               </Button>
             </div>
           </div>

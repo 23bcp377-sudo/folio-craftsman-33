@@ -1,8 +1,17 @@
 import { Heart, TrendingUp, Calendar, AlertCircle, CheckCircle } from "lucide-react";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 export const DietPlanner = () => {
+  const { ref, isVisible } = useIntersectionObserver();
+  
   return (
-    <section id="diet-planner" className="section-padding bg-background">
+    <section 
+      ref={ref}
+      id="diet-planner" 
+      className={`section-padding bg-background transition-all duration-1000 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-4">
