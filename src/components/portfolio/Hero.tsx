@@ -1,5 +1,6 @@
 import { Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 export const Hero = () => {
   return (
@@ -56,15 +57,17 @@ export const Hero = () => {
           <div className="flex justify-center">
             <div className="bg-white rounded-2xl p-8 card-elevated max-w-md w-full">
               <div className="flex flex-col items-center text-center space-y-4">
-                <div className="w-48 h-48 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white text-6xl font-bold">
-                  PC
-                </div>
+                <img 
+                  src={profilePhoto} 
+                  alt="Pradhyumansinh Chauhan" 
+                  className="w-48 h-48 rounded-full object-cover border-4 border-accent/20"
+                />
                 <div className="space-y-2">
                   <h3 className="text-2xl font-heading font-bold text-primary">
-                    Profile Photo
+                    Pradhyumansinh Chauhan
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    Placeholder — Replace with profile link
+                    Computer Science Student
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-3 pt-4">
