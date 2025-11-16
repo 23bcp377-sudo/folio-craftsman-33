@@ -91,14 +91,6 @@ export const Contact = () => {
                 ))}
               </div>
             </div>
-
-            <div className="bg-coral/20 backdrop-blur-sm border border-coral/30 rounded-xl p-6">
-              <h4 className="font-heading font-bold text-lg mb-3">📷 Profile Photo Note</h4>
-              <p className="text-sm text-primary-foreground/90">
-                Photo placeholder present throughout portfolio. Replace with actual profile image link 
-                when available for complete presentation.
-              </p>
-            </div>
           </div>
         </div>
 
