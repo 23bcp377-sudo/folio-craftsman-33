@@ -63,9 +63,6 @@ export const Contact = () => {
                   </a>
                 </Button>
               </div>
-              <p className="text-xs text-primary-foreground/60 italic">
-                Placeholder links — Add your actual profile URLs
-              </p>
             </div>
           </div>
 
