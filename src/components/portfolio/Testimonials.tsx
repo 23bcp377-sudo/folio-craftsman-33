@@ -91,10 +91,6 @@ export const Testimonials = () => {
                 <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                 <p className="text-xs text-muted-foreground mt-1">{testimonial.institution}</p>
               </div>
-
-              <div className="text-xs text-muted-foreground mt-4 italic">
-                Photo placeholder — Replace with provided image
-              </div>
             </div>
           ))}
         </div>
