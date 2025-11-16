@@ -105,7 +105,10 @@ export const Collaboration = () => {
         {/* Timeline */}
         <div className="bg-card rounded-xl p-8 card-shadow">
           <h3 className="text-2xl font-heading font-bold text-primary mb-8 text-center">Project Timeline</h3>
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="relative grid md:grid-cols-4 gap-8 md:gap-6">
+            {/* Connecting line */}
+            <div className="hidden md:block absolute top-10 left-0 right-0 h-0.5 bg-accent/20 -z-10" style={{ width: 'calc(100% - 4rem)', marginLeft: '2rem' }}></div>
+            
             {[
               {
                 phase: "Planning",
@@ -134,38 +137,33 @@ export const Collaboration = () => {
             ].map((stage, idx) => {
               const Icon = stage.icon;
               return (
-                <div key={idx} className="relative">
-                  <div className="flex flex-col items-center text-center">
-                    <div
-                      className={`p-4 rounded-xl mb-4 ${
+                <div key={idx} className="relative flex flex-col items-center text-center">
+                  <div
+                    className={`p-4 rounded-xl mb-4 relative z-10 ${
+                      stage.color === "accent"
+                        ? "bg-accent/10"
+                        : stage.color === "coral"
+                        ? "bg-coral/10"
+                        : "bg-primary/10"
+                    }`}
+                  >
+                    <Icon
+                      className={
                         stage.color === "accent"
-                          ? "bg-accent/10"
+                          ? "text-accent"
                           : stage.color === "coral"
-                          ? "bg-coral/10"
-                          : "bg-primary/10"
-                      }`}
-                    >
-                      <Icon
-                        className={
-                          stage.color === "accent"
-                            ? "text-accent"
-                            : stage.color === "coral"
-                            ? "text-coral"
-                            : "text-primary"
-                        }
-                        size={32}
-                      />
-                    </div>
-                    <h4 className="font-heading font-bold text-lg mb-3">{stage.phase}</h4>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      {stage.tasks.map((task, tidx) => (
-                        <li key={tidx}>• {task}</li>
-                      ))}
-                    </ul>
+                          ? "text-coral"
+                          : "text-primary"
+                      }
+                      size={32}
+                    />
                   </div>
-                  {idx < 3 && (
-                    <div className="hidden md:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-accent/50 to-transparent"></div>
-                  )}
+                  <h4 className="font-heading font-bold text-lg mb-3">{stage.phase}</h4>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    {stage.tasks.map((task, tidx) => (
+                      <li key={tidx}>• {task}</li>
+                    ))}
+                  </ul>
                 </div>
               );
             })}
