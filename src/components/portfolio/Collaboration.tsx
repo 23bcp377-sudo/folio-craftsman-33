@@ -1,6 +1,5 @@
 import { Users, Code, Database, Target, Award } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import teamPhoto from "@/assets/team-photo.jpg";
 
 export const Collaboration = () => {
   const { ref, isVisible } = useIntersectionObserver();
@@ -45,16 +44,6 @@ export const Collaboration = () => {
                   <span className="px-4 py-2 bg-accent/10 text-accent font-medium rounded-lg">
                     Database Manager
                   </span>
-                </div>
-              </div>
-              <div>
-                <h4 className="font-heading font-bold text-lg mb-2">Team Photo</h4>
-                <div className="rounded-lg overflow-hidden">
-                  <img 
-                    src={teamPhoto} 
-                    alt="Hackathon team members standing together outdoors"
-                    className="w-full h-auto object-cover"
-                  />
                 </div>
               </div>
             </div>
